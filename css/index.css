@@ -23,6 +23,17 @@ body {
     color: var(--main-color);
 }
 
+.search-box-desktop{
+    display: none;
+}
+@media(min-width: 600px){
+    .search-box-desktop{
+        display: block;
+    }
+    .search-box-mobile{
+      display: none; 
+    }
+}
 .search-box  {
     display: flex;
     justify-content: flex-start;
@@ -82,13 +93,13 @@ text-align: center;
 margin: 1rem 0;
 }
 
- .products .product-list{
+.products .product-list img{
         width: 100%;
         display: flex;
         justify-content: center;
-    }
+}
 
- .product-list {
+.product-list {
   position: relative;
   width: 100%;
   max-width: 400px;
