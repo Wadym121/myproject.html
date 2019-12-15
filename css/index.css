@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Alatsi|Lobster&display=swap'); 
 :root {
     font-family: 'Alatsi', sans-serif;
-    --main-color: black; 
-}
+    --main-color: black; }
 
 body {
     max-width: 980px;
     margin: auto;
+}
+
+.clock {
+    display: flex;
+    font-family: sans-serif;
+    justify-content: center;
+    padding: 10px;
 }
 
 .row-menu {
@@ -20,27 +26,27 @@ body {
 .row-menu a {
     text-decoration: none;
     text-transform: uppercase;
-    color: var(--main-color);
+    color: black;
 }
 
 input[type=text] {
-  width: 100px;
-  margin: 30px 30px 2px 10px;
-  box-sizing: border-box;
-  border: 2px solid rgb(179, 179, 211);
-  border-radius: 4px;
-  font-size: 12px;
-  background-color: white;
-  background-image: url('searchicon.png');
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-  padding: 5px 10px 5px 20px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
+    width: 100px;
+    margin: 30px 30px 2px 10px;
+    box-sizing: border-box;
+    border: 2px solid rgb(179, 179, 211);
+    border-radius: 4px;
+    font-size: 12px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 5px 10px 5px 20px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
 }
 
 input[type=text]:focus {
-  width: 100%;
+    width: 30%;
 }
 
 h1 {
@@ -50,7 +56,7 @@ h1 {
     margin: 0rem 0;
 }
 
-p {
+.header-information {
     font-size: 1rem;
     text-align: center;
 }
@@ -62,32 +68,36 @@ header .menu {
     justify-content: space-around;
 }
 
-header .menu a{
+header .menu a {
     text-decoration: none;
     text-transform: uppercase;
-    color: var(--main-color);
+    color: black;
     border: 1px solid transparent;
     padding: 5px;
 }
 
 header .menu a:hover {
-    border: 1px solid var(--main-color);
+    border: 1px solid black;
 }
 
 @media screen and (max-width: 600px) {
-  header .menu {
-    display: none;
-  }
-}
-.banner img{
-         width: 100%;
-         height: auto;
-        background-image: url(../img/slider.jpg);
-        background-size: center; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    header .menu {
+        display: none;
     }
+}
+
+li a:hover:not(.active) {
+    background-color: rgb(121, 123, 224);
+    padding: 0px 0px;
+}
+.banner {
+    background-image: url(../img/slider.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 450px;
+    display: flex;
+}
+
 h2 {
     font-size: 1.5rem;
     text-align: center;
@@ -141,53 +151,56 @@ h2 {
 }
 
 h3 {
+    text-indent: 50px;
     font-size: 1.4rem;
-    text-align: center;
     margin: 50px 30px 6px 10px;
 }
 
-.information{
-    font-size: 1rem;
+.about-shop {
+    text-indent: 50px;
+}
+
+p {
+    text-indent: 50px;
+}
+
+.show-me {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #c3e7fc;
+    border: none;
+    color: rgb(10, 10, 10);
     text-align: center;
-}
-.button {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #c3e7fc;
-  border: none;
-  color: rgb(10, 10, 10);
-  text-align: center;
-  font-size: 15px;
-  padding: 7px;
-  width: 200px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 0px 200px 0px;
+    font-size: 15px;
+    padding: 7px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
 }
 
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
+.show-me span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
 }
 
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
+.show-me span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
 }
 
-.button:hover span {
-  padding-right: 10px;
+.show-me:hover span {
+    padding-right: 10px;
 }
 
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
+.show-me:hover span:after {
+    opacity: 1;
+    right: 0;
 }
 
 img {
@@ -205,78 +218,113 @@ img {
 h4 {
     font-size: 1rem;
     text-align: center;
-    margin: 10px 30px 2px 10px;
+    margin: 60px 30px 2px 10px;
 }
+
+h5 {
+    font-size: 1rem;
+    text-align: center;
+    border-bottom: double;
+    padding: 10px;
+}
+
 .list .help {
     display: flex;
+    flex-direction: column;
     padding: 0;
     list-style: none;
-    justify-content: column;
+    align-items: center;
 }
 
-.list .help a{
+.list .help a {
     text-decoration: none;
     text-transform: uppercase;
-    color: var(--main-color);
+    color: black;
     border: 1px solid transparent;
-    padding: 5px;
+    padding: 0px;
 }
+
 @media screen and (max-width: 600px) {
- .list .help {
-    display: none;
-  }
+    .list .help {
+        display: none;
+    }
 }
+
 .list .information {
     display: flex;
+    flex-direction: column;
     padding: 0;
     list-style: none;
-    justify-content: column;
+    align-items: center;
 }
 
-.list .information a{
+.list .information a {
     text-decoration: none;
     text-transform: uppercase;
-    color: var(--main-color);
+    color: black;
     border: 1px solid transparent;
-    padding: 5px;
+    padding: 0px;
 }
+
 @media screen and (max-width: 600px) {
- .list .information {
-    display: none;
-  }
+    .list .information {
+        display: none;
+    }
 }
+
 .list .acount {
     display: flex;
+    flex-direction: column;
     padding: 0;
     list-style: none;
-    justify-content: column;
+    align-items: center;
 }
 
-.list .acount a{
+.list .acount a {
     text-decoration: none;
     text-transform: uppercase;
-    color: var(--main-color);
+    color: black;
     border: 1px solid transparent;
     padding: 5px;
 }
+
 @media screen and (max-width: 600px) {
- .list .acount {
-    display: none;
-  }
+    .list .acount {
+        display: none;
+    }
 }
 
+.soc {
+    display: flex;
+    padding-right: 90px;
+    list-style: none;
+    width: 100%;
+    justify-content: space-around;
+    margin: 20px;
+}
 
-.header-phone {
-    justify-content: flex-end;
+.soc a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+
+.contacts {
     width: 100%;
     margin: 10px 30px 2px 10px;
     color: black;
 }
 
-.work-days {
-    max-width: 600px;
-    justify-content: flex-end;
+.contacts a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    margin: 2px 0px 5px 100px;
     color: black;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    align-items: center
 }
