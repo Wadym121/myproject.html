@@ -13,7 +13,6 @@ function login(e) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            // 'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: JSON.stringify({
             name: document.querySelector('.login-form input[name=name]').value,
@@ -22,5 +21,6 @@ function login(e) {
     })
     .then(_ => document.querySelector('.login-form').reset());
 }
-$('.show-me').click(() => $('p').toggle(3000));
+$('p').hide();
+$('.show-me').click(() => $('p').toggle(300));
 
